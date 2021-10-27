@@ -30,11 +30,11 @@ oncoplot( maf_dataframe, top=5 )
 
 
 #generate subsets for age
-bool_young <-  clinic$age_at_initial_pathologic_diagnosis < 50 
+bool_young <-  clinic$age_at_initial_pathologic_diagnosis < 45 
 young_patients <- clinic$Tumor_Sample_Barcode[ bool_young ]
 young_maf <- subsetMaf( maf_dataframe, tsb = young_patients )
 
-bool_old <- clinic$age_at_initial_pathologic_diagnosis >= 50
+bool_old <- clinic$age_at_initial_pathologic_diagnosis >= 45
 old_patients <- clinic$Tumor_Sample_Barcode[bool_old]
 old_maf <- subsetMaf( maf_dataframe, tsb = old_patients)
 
